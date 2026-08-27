@@ -45,17 +45,6 @@ Wardrobe information is stored locally using JSON.
 ### ✨ Outfit Generator
 FIT404 can generate combinations using clothes already available in the digital wardrobe.
 
-### 🎯 Occasion & Weather Mode
-Get simple styling guidance based on:
-
-- College
-- Casual outings
-- Parties
-- Interviews
-- Formal events
-
-and conditions such as hot, warm, cool, cold, or rainy weather.
-
 ---
 
 ## 🧠 How Outfit Analysis Works
