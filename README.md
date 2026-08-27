@@ -1,6 +1,6 @@
-# 👕 FIT404
+# 👕 FIT404: BAD FIT NOT FOUND.
 
-### BAD FIT NOT FOUND.
+### 
 
 **FIT404** is a fashion-tech project built with Python that explores how computer vision and image analysis can be used to understand outfit colors, visual balance, and styling.
 
