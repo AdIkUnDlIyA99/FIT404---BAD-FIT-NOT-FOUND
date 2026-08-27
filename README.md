@@ -221,7 +221,5 @@ It is not designed to rate a person's body, attractiveness, or physical appearan
 
 ---
 
-## 👨‍💻 Author
-
-Aditya Kundliya
+## 👨‍💻 Author: Aditya Kundliya
 ---
