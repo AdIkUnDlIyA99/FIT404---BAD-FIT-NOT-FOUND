@@ -1,4 +1,4 @@
-# 👕 FIT404: BAD FIT NOT FOUND.
+# 👕 FIT404: BAD FIT NOT FOUND
 
 ### 
 
