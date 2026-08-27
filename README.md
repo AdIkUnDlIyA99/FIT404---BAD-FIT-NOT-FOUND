@@ -118,11 +118,11 @@ FIT404/
 ├── tests/
 │   ├── test_analysis.py
 │   └── test_comparison.py
-│
+│    
 ├── assets/
+│   ├── fit404_footer_logo.png
+│   └── fit404_logo.png
 ├── data/
-├── models/
-├── notebooks/
 │
 ├── requirements.txt
 ├── .gitignore
@@ -192,8 +192,6 @@ The automated tests currently cover core outfit analysis and comparison function
 | Outfit Comparison | ✅ |
 | Digital Wardrobe | ✅ |
 | Outfit Generation | ✅ |
-| Occasion Suggestions | ✅ |
-| Manual Weather Context | ✅ |
 | Clothing Detection Model | 🚧 Planned |
 | Dedicated trained style classifier | 🚧 Planned |
 
@@ -224,9 +222,4 @@ It is not designed to rate a person's body, attractiveness, or physical appearan
 ## 👨‍💻 Author
 
 **Aditya Kundliya**
-
-B.Tech Computer Science Engineering — Artificial Intelligence & Machine Learning
-
 ---
-
-⭐ If you find FIT404 interesting, consider starring the repository!
