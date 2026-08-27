@@ -1,0 +1,2536 @@
+/* =========================================
+   FIT404 — EDITORIAL UI
+   ========================================= */
+
+:root {
+    --bg: #080808;
+    --panel: #101010;
+    --panel-soft: #151515;
+    --border: rgba(255, 255, 255, 0.10);
+
+    --text: #f6f5f1;
+    --muted: #8f8f8a;
+
+    --accent: #c8ff32;
+    --accent-soft: rgba(200, 255, 50, 0.12);
+
+    --danger: #ff5d73;
+}
+
+
+/* =========================================
+   APP BASE
+   ========================================= */
+
+html,
+body,
+[data-testid="stAppViewContainer"] {
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(200, 255, 50, 0.06),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0% 80%,
+            rgba(255, 255, 255, 0.025),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+}
+
+
+[data-testid="stAppViewContainer"] > .main {
+    background: transparent;
+}
+
+
+.block-container {
+    max-width: 1450px;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+
+/* =========================================
+   HIDE STREAMLIT CHROME
+   ========================================= */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    background: transparent !important;
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #323232;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+[data-testid="stSidebar"] {
+    background:
+        linear-gradient(
+            180deg,
+            #0c0c0c 0%,
+            #080808 100%
+        );
+
+    border-right: 1px solid var(--border);
+}
+
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 2rem;
+}
+
+
+[data-testid="stSidebar"] .stRadio label {
+    padding:
+        0.85rem
+        1rem;
+
+    margin-bottom: 0.35rem;
+
+    border-radius: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+[data-testid="stSidebar"] .stRadio label:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -0.04em;
+}
+
+
+p {
+    color: var(--text);
+}
+
+
+.oc-eyebrow {
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: var(--accent);
+
+    margin-bottom: 0.8rem;
+}
+
+
+.oc-muted {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.oc-hero {
+    padding:
+        2.2rem
+        0
+        2.8rem
+        0;
+}
+
+
+.oc-hero-title {
+    margin: 0;
+
+    font-size: clamp(
+        3.8rem,
+        8vw,
+        7.8rem
+    );
+
+    line-height: 0.85;
+
+    font-weight: 900;
+
+    letter-spacing: -0.075em;
+
+    color: var(--text);
+}
+
+
+.oc-hero-title span {
+    color: var(--accent);
+}
+
+
+.oc-hero-sub {
+    margin-top: 1.6rem;
+
+    max-width: 700px;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.oc-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 26px;
+
+    padding: 1.5rem;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.oc-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(200, 255, 50, 0.30);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.28);
+}
+
+
+/* =========================================
+   STYLE HERO CARD
+   ========================================= */
+
+.oc-style-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200,255,50,0.13),
+            rgba(255,255,255,0.03)
+        );
+
+    border:
+        1px solid
+        rgba(200,255,50,0.22);
+
+    border-radius: 28px;
+
+    padding:
+        1.7rem
+        1.8rem;
+
+    margin-bottom: 1rem;
+}
+
+
+.oc-style-label {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+
+    text-transform: uppercase;
+}
+
+
+.oc-style-name {
+    margin-top: 0.35rem;
+
+    color: var(--text);
+
+    font-size: clamp(
+        2.2rem,
+        4vw,
+        4.2rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 900;
+}
+
+
+.oc-confidence {
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    background: var(--accent);
+
+    color: #0a0a0a;
+
+    padding:
+        0.45rem
+        0.75rem;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================
+   METRIC GRID
+   ========================================= */
+
+.oc-metric-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0.8rem;
+
+    margin-bottom: 1rem;
+}
+
+
+.oc-metric {
+    background: #111;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 20px;
+
+    padding:
+        1.15rem;
+}
+
+
+.oc-metric-label {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+.oc-metric-value {
+    margin-top: 0.3rem;
+
+    color: var(--text);
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+   ========================================= */
+
+.oc-progress {
+    width: 100%;
+
+    height: 8px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    margin-top: 0.7rem;
+}
+
+
+.oc-progress-fill {
+    height: 100%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            #efffb6
+        );
+}
+
+
+/* =========================================
+   PALETTE
+   ========================================= */
+
+.oc-palette {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+}
+
+
+.oc-swatch-wrap {
+    text-align: center;
+}
+
+
+.oc-swatch {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.25);
+}
+
+
+.oc-swatch-code {
+    margin-top: 0.4rem;
+
+    font-size: 0.65rem;
+
+    color: var(--muted);
+}
+
+
+/* =========================================
+   SECTION HEADERS
+   ========================================= */
+
+.oc-section {
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+}
+
+
+.oc-section-number {
+    color: var(--accent);
+
+    font-weight: 900;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.oc-section-title {
+    margin-top: 0.2rem;
+
+    font-size: 1.7rem;
+
+    font-weight: 900;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================
+   FEEDBACK
+   ========================================= */
+
+.oc-feedback {
+    padding:
+        1rem
+        1.1rem;
+
+    margin-bottom: 0.65rem;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+    border-left:
+        3px solid
+        var(--accent);
+
+    border-radius:
+        0
+        14px
+        14px
+        0;
+
+    color: #d8d8d2;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   TAGS
+   ========================================= */
+
+.oc-tag {
+    display: inline-block;
+
+    padding:
+        0.35rem
+        0.65rem;
+
+    margin:
+        0.2rem
+        0.2rem
+        0.2rem
+        0;
+
+    border-radius: 999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    color: var(--text);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   INPUTS / UPLOADER
+   ========================================= */
+
+[data-testid="stFileUploader"] {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        );
+
+    border:
+        1px dashed
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    border-radius: 24px;
+
+    padding: 1rem;
+}
+
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.stButton > button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: var(--accent);
+
+    color: #080808;
+
+    font-weight: 900;
+
+    padding:
+        0.78rem
+        1rem;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.stButton > button:hover {
+    background: #dcff72;
+
+    color: #080808;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            200,
+            255,
+            50,
+            0.18
+        );
+}
+
+
+/* =========================================
+   SELECTS / INPUTS
+   ========================================= */
+
+[data-baseweb="select"] > div,
+[data-testid="stTextInput"] input {
+    background: #111 !important;
+
+    border:
+        1px solid
+        var(--border) !important;
+
+    border-radius: 14px !important;
+}
+
+
+/* =========================================
+   EXPANDERS
+   ========================================= */
+
+[data-testid="stExpander"] {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 18px;
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+[data-testid="stImage"] img {
+    border-radius: 26px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 30px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+
+/* =========================================
+   INFO / ALERTS
+   ========================================= */
+
+[data-testid="stAlert"] {
+    border-radius: 16px;
+}
+
+
+/* =========================================
+   DIVIDERS
+   ========================================= */
+
+hr {
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        ) !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (
+    max-width: 800px
+) {
+
+    .oc-hero-title {
+        font-size: 3.6rem;
+    }
+
+    .oc-metric-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   FIT INTELLIGENCE V2
+   ========================================= */
+
+.fi-panel {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 22, 27, 0.98),
+            rgba(10, 13, 17, 0.98)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    padding: 1.5rem;
+
+    margin-bottom: 1rem;
+
+    box-shadow:
+        0 18px 50px
+        rgba(0,0,0,0.25);
+}
+
+
+.fi-style-hero {
+    position: relative;
+
+    min-height: 150px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(200,255,50,0.09),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #11161c,
+            #0b0e12
+        );
+
+    border:
+        1px solid rgba(200,255,50,0.24);
+
+    border-radius: 22px;
+
+    padding:
+        1.7rem
+        2rem;
+
+    margin-bottom: 1rem;
+}
+
+
+.fi-style-label {
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    color: #a3a5a8;
+
+    text-transform: uppercase;
+}
+
+
+.fi-style-value {
+    margin-top: 0.25rem;
+
+    color: #c8ff32;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        5rem
+    );
+
+    font-weight: 900;
+
+    letter-spacing: -0.055em;
+
+    line-height: 1;
+}
+
+
+.fi-confidence {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 1rem;
+
+    padding:
+        0.38rem
+        0.85rem;
+
+    border:
+        1px solid #c8ff32;
+
+    border-radius: 999px;
+
+    color: #c8ff32;
+
+    font-size: 0.75rem;
+
+    font-weight: 900;
+}
+
+
+.fi-two-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+
+.fi-score-card {
+    background: #101419;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-radius: 18px;
+
+    padding: 1.35rem;
+}
+
+
+.fi-score-title {
+    color: #d4d6d8;
+
+    font-size: 0.76rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.fi-score-number {
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+    color: #f7f7f2;
+
+    margin-top: 0.3rem;
+
+    letter-spacing: -0.04em;
+}
+
+
+.fi-score-caption {
+    margin-top: 0.55rem;
+
+    color: #c8ff32;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+}
+
+
+.fi-bar-track {
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 0.7rem;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+
+.fi-bar-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b7ef22,
+            #d9ff70
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(200,255,50,0.22);
+}
+
+
+.fi-section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    margin-bottom: 1.2rem;
+}
+
+
+.fi-section-number {
+    color: #c8ff32;
+
+    font-size: 0.9rem;
+
+    font-weight: 900;
+}
+
+
+.fi-section-name {
+    font-size: 1rem;
+
+    color: #f1f1ec;
+
+    font-weight: 850;
+
+    letter-spacing: 0.02em;
+}
+
+
+.fi-style-row {
+    display: grid;
+
+    grid-template-columns:
+        120px
+        minmax(100px, 1fr)
+        55px;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    margin-bottom: 0.95rem;
+}
+
+
+.fi-style-row-name {
+    font-size: 0.82rem;
+
+    font-weight: 750;
+
+    color: #e6e7e2;
+}
+
+
+.fi-style-row-score {
+    font-size: 0.74rem;
+
+    text-align: right;
+
+    color: #acafb2;
+}
+
+
+.fi-palette-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(75px, 1fr));
+
+    gap: 1rem;
+}
+
+
+.fi-color-card {
+    text-align: center;
+}
+
+
+.fi-color-box {
+    width: 100%;
+
+    aspect-ratio: 1 / 0.85;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(255,255,255,0.03);
+}
+
+
+.fi-color-code {
+    margin-top: 0.6rem;
+
+    color: #b3b5b7;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+}
+
+
+.fi-color-percentage {
+    margin-top: 0.25rem;
+
+    color: #f4f4ef;
+
+    font-size: 0.84rem;
+
+    font-weight: 900;
+}
+
+
+.fi-palette-strip {
+    display: flex;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    margin-top: 1rem;
+}
+
+
+.fi-insight-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 0.8rem;
+}
+
+
+.fi-insight {
+    background: #101419;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    border-radius: 14px;
+
+    padding: 1rem;
+}
+
+
+.fi-insight-label {
+    color: #8f9396;
+
+    font-size: 0.68rem;
+
+    font-weight: 750;
+}
+
+
+.fi-insight-value {
+    color: #c8ff32;
+
+    font-size: 0.82rem;
+
+    margin-top: 0.25rem;
+
+    font-weight: 850;
+}
+
+
+.fi-note {
+    display: grid;
+
+    grid-template-columns:
+        42px
+        1fr;
+
+    gap: 0.9rem;
+
+    padding:
+        1rem
+        0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.fi-note:last-child {
+    border-bottom: none;
+}
+
+
+.fi-note-icon {
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        #c8ff32;
+
+    color: #c8ff32;
+
+    border-radius: 50%;
+
+    font-weight: 900;
+}
+
+
+.fi-note-main {
+    font-size: 0.86rem;
+
+    font-weight: 800;
+
+    color: #f0f0ec;
+}
+
+
+.fi-note-sub {
+    margin-top: 0.3rem;
+
+    font-size: 0.76rem;
+
+    line-height: 1.45;
+
+    color: #989b9e;
+}
+
+
+@media (max-width: 900px) {
+
+    .fi-two-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fi-palette-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .fi-insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fi-style-row {
+        grid-template-columns:
+            90px
+            1fr
+            45px;
+    }
+}
+
+/* =========================================
+   CLEAN IMAGE UPLOAD
+   ========================================= */
+
+.upload-hero {
+    text-align: center;
+
+    padding:
+        3.2rem
+        2rem
+        1.5rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.015)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-bottom: none;
+
+    border-radius:
+        24px
+        24px
+        0
+        0;
+}
+
+
+.upload-plus {
+    font-size: 2.8rem;
+
+    line-height: 1;
+
+    color: #c8ff32;
+
+    margin-bottom: 1rem;
+}
+
+
+.upload-title {
+    font-size: 1.45rem;
+
+    font-weight: 900;
+
+    letter-spacing: -0.03em;
+
+    color: #f6f5f1;
+}
+
+
+.upload-subtitle {
+    margin-top: 0.55rem;
+
+    color: #858884;
+
+    font-size: 0.9rem;
+}
+
+
+/* merge uploader into hero */
+
+[data-testid="stFileUploader"] {
+    margin-top: -0.5rem;
+
+    padding:
+        1rem
+        1.2rem
+        1.3rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.015)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-top: none;
+
+    border-radius:
+        0
+        0
+        24px
+        24px;
+}
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.oc-footer {
+    margin-top: 5rem;
+    padding: 1.8rem 0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.oc-footer-brand {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.fit404-footer-logo {
+    display: block;
+    width: clamp(125px, 11vw, 165px);
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+}
+
+
+/* SOCIAL ICON AREA */
+
+.oc-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+
+/* ICON BUTTON */
+
+.oc-social-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+
+    text-decoration: none !important;
+}
+
+
+
+/* HOVER */
+
+.oc-social-icon:hover {
+    border-color: #c8ff32;
+
+    background:
+        rgba(200, 255, 50, 0.08);
+
+    transform: translateY(-3px);
+}
+
+
+.oc-social-icon:hover svg {
+    stroke: #c8ff32;
+
+    transform: scale(1.06);
+}
+
+
+.oc-social-icon:hover svg .social-dot {
+    fill: #c8ff32;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .oc-footer {
+        margin-top: 3rem;
+    }
+
+    .oc-social-icon {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================================
+   FINAL SIDEBAR + FOOTER FIXES
+   ========================================= */
+
+/* Hide Streamlit's radio circles; keep the whole row clickable. */
+[data-testid="stSidebar"] div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] label {
+    cursor: pointer !important;
+    width: 100% !important;
+    padding: 0.82rem 1rem !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    transition: background 0.18s ease, border-color 0.18s ease,
+                transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background: rgba(200,255,50,0.08) !important;
+    border-color: rgba(200,255,50,0.22) !important;
+    transform: translateX(5px);
+    box-shadow: inset 3px 0 0 #c8ff32;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+    background: rgba(200,255,50,0.12) !important;
+    border-color: rgba(200,255,50,0.30) !important;
+    box-shadow: inset 3px 0 0 #c8ff32;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {
+    color: #c8ff32 !important;
+    font-weight: 800 !important;
+}
+
+.oc-social-icon img {
+    width: 19px !important;
+    height: 19px !important;
+    display: block !important;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.oc-social-icon:hover img {
+    transform: scale(1.10);
+}
+
+
+/* FINAL: NO CIRCULAR UI CHROME */
+.oc-social-icon, .oc-social-icon:hover {
+  width:32px !important; height:32px !important; background:transparent !important; border:none !important; border-radius:0 !important; box-shadow:none !important;
+}
+[data-testid="stSidebar"] div[role="radiogroup"] label > div:first-child { display:none !important; }
+[data-testid="stSidebar"] div[role="radiogroup"] label { cursor:pointer !important; padding-left:1rem !important; }
+[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) { background:rgba(200,255,50,.10) !important; border:none !important; border-radius:10px !important; box-shadow:inset 3px 0 0 #c8ff32 !important; }
+[data-testid="stSidebar"] div[role="radiogroup"] label:hover { background:rgba(200,255,50,.06) !important; border:none !important; cursor:pointer !important; transform:translateX(4px); }
+
+
+/* =========================================
+   ABSOLUTE FINAL OVERRIDES — NO CIRCLES
+   ========================================= */
+
+/* Social links: icon only, zero surrounding shape/chrome. */
+.oc-footer .oc-social-icon,
+.oc-footer .oc-social-icon:hover,
+.oc-footer .oc-social-icon:focus,
+.oc-footer .oc-social-icon:active {
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+.oc-footer .oc-social-icon img {
+    width: 27px !important;
+    height: 27px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Streamlit/BaseWeb radio indicator: hide every possible indicator wrapper. */
+[data-testid="stSidebar"] [role="radiogroup"] label[data-baseweb="radio"] > div:first-child,
+[data-testid="stSidebar"] [role="radiogroup"] label > div:first-child:not([data-testid="stMarkdownContainer"]),
+[data-testid="stSidebar"] [role="radiogroup"] input[type="radio"],
+[data-testid="stSidebar"] [role="radiogroup"] input[type="radio"] + div {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Navigation remains a full clickable rectangular row. */
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    cursor: pointer !important;
+    width: 100% !important;
+    padding: .82rem 1rem !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: background .18s ease, transform .18s ease, box-shadow .18s ease !important;
+}
+[data-testid="stSidebar"] [role="radiogroup"] label:hover {
+    background: rgba(200,255,50,.07) !important;
+    transform: translateX(4px) !important;
+    box-shadow: inset 3px 0 0 #c8ff32 !important;
+}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {
+    background: rgba(200,255,50,.11) !important;
+    box-shadow: inset 3px 0 0 #c8ff32 !important;
+}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) p {
+    color: #c8ff32 !important;
+    font-weight: 800 !important;
+}
+
+/* =========================================
+   CANVAS DECORATION + CHROME CLEANUP
+   ========================================= */
+
+/* Hide local Streamlit developer chrome (Stop / Deploy / running status). */
+[data-testid="stToolbar"],
+[data-testid="stStatusWidget"],
+[data-testid="stDecoration"],
+header[data-testid="stHeader"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+/* Keep real app content above the decorative canvas. */
+[data-testid="stMainBlockContainer"] {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+[data-testid="stSidebar"] {
+    z-index: 5 !important;
+}
+
+.oc-canvas-decor {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    user-select: none;
+}
+
+.canvas-word,
+.canvas-sticker,
+.canvas-note,
+.canvas-doodle,
+.canvas-outline {
+    position: absolute;
+    font-family: inherit;
+    pointer-events: none;
+}
+
+.canvas-word {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(200,255,50,.12);
+    text-stroke: 1px rgba(200,255,50,.12);
+    font-size: clamp(7rem, 13vw, 14rem);
+    font-weight: 950;
+    letter-spacing: -.08em;
+    line-height: .8;
+    opacity: .72;
+    filter: blur(.15px);
+}
+
+.canvas-sticker {
+    color: #c8ff32;
+    border: 1px solid rgba(200,255,50,.22);
+    background: rgba(8,8,8,.58);
+    border-radius: 999px;
+    padding: .48rem .75rem;
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+    box-shadow: 0 10px 30px rgba(0,0,0,.14);
+    opacity: .72;
+}
+
+.canvas-note {
+    color: rgba(246,245,241,.28);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+.canvas-doodle {
+    color: rgba(200,255,50,.28);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.canvas-outline {
+    color: rgba(246,245,241,.12);
+    border-left: 2px solid rgba(200,255,50,.20);
+    padding-left: .7rem;
+    font-size: .62rem;
+    font-weight: 900;
+    letter-spacing: .18em;
+}
+
+/* Analyze Fit */
+.canvas-word-a { right: -2.4rem; top: 20%; transform: rotate(90deg); transform-origin: right top; }
+.canvas-sticker-a { right: 2.4rem; top: 38%; transform: rotate(7deg); }
+.canvas-note-a { right: 4rem; top: 58%; transform: rotate(-5deg); }
+.canvas-doodle-a { right: 8%; bottom: 12%; transform: rotate(14deg); }
+.canvas-outline-a { right: 2.5rem; bottom: 7%; }
+
+/* Fit Battle */
+.canvas-word-b { right: 2%; top: 27%; font-size: clamp(9rem, 18vw, 19rem); }
+.canvas-sticker-b { right: 3rem; top: 63%; transform: rotate(-6deg); }
+.canvas-note-b { right: 5%; top: 18%; }
+.canvas-doodle-b { right: 10%; bottom: 10%; }
+.canvas-outline-b { right: 2.5rem; bottom: 18%; }
+
+/* Wardrobe */
+.canvas-word-c { right: -5rem; top: 29%; transform: rotate(90deg); transform-origin: right top; }
+.canvas-sticker-c { right: 3.4rem; top: 52%; transform: rotate(4deg); }
+.canvas-note-c { right: 6%; top: 19%; }
+.canvas-doodle-c { right: 8%; bottom: 10%; font-size: 3rem; }
+.canvas-outline-c { right: 2.5rem; bottom: 23%; }
+
+/* Build Fit */
+.canvas-word-d { right: 1%; top: 35%; font-size: clamp(9rem, 17vw, 18rem); }
+.canvas-sticker-d { right: 3rem; top: 19%; transform: rotate(5deg); }
+.canvas-note-d { right: 5%; bottom: 18%; }
+.canvas-doodle-d { right: 13%; bottom: 8%; }
+.canvas-outline-d { right: 2.5rem; top: 62%; }
+
+/* Context */
+.canvas-word-e { right: -1.8rem; top: 22%; transform: rotate(90deg); transform-origin: right top; }
+.canvas-sticker-e { right: 4rem; top: 49%; transform: rotate(-4deg); }
+.canvas-note-e { right: 6%; top: 18%; }
+.canvas-doodle-e { right: 12%; bottom: 12%; font-size: 2.6rem; }
+.canvas-outline-e { right: 2.5rem; bottom: 25%; }
+
+/* Tiny ambient grain-ish dots without an image asset. */
+[data-testid="stAppViewContainer"]::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .15;
+    background-image:
+        radial-gradient(circle at 20% 22%, rgba(200,255,50,.10) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 78% 74%, rgba(255,255,255,.07) 0 1px, transparent 1.5px);
+    background-size: 52px 52px, 67px 67px;
+}
+
+@media (max-width: 1100px) {
+    .canvas-word { opacity: .35; }
+    .canvas-sticker, .canvas-note, .canvas-outline { opacity: .45; }
+}
+
+@media (max-width: 800px) {
+    .oc-canvas-decor { display: none; }
+}
+
+
+/* =========================================
+   FIT404 LOGO INTEGRATION
+   ========================================= */
+
+.fit404-sidebar-wordmark {
+    margin-top: 0.45rem;
+    opacity: 0.7;
+}
+
+[data-testid="stSidebar"] [data-testid="stImage"] {
+    margin-bottom: 0.25rem;
+}
+
+[data-testid="stSidebar"] [data-testid="stImage"] img {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Centered brand hero — intentionally text-free. */
+.oc-hero.fit404-logo-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 245px;
+    padding: 1.35rem 0 1.65rem;
+    margin: 0;
+}
+
+.fit404-center-logo {
+    display: block;
+    width: clamp(210px, 18vw, 285px);
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.28));
+}
+
+@media (max-width: 850px) {
+    .oc-hero.fit404-logo-hero {
+        min-height: 205px;
+        padding: 1rem 0 1.35rem;
+    }
+
+    .fit404-center-logo {
+        width: clamp(185px, 30vw, 235px);
+    }
+}
+
+@media (max-width: 600px) {
+    .oc-hero.fit404-logo-hero {
+        min-height: 175px;
+        padding: 0.8rem 0 1.1rem;
+    }
+
+    .fit404-center-logo {
+        width: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fit404-footer-logo {
+        width: 120px;
+    }
+}
+
+
+/* =========================================
+   2026-08 SIDEBAR BRAND + SPACIOUS MAIN LAYOUT
+   ========================================= */
+
+/* The circular brand now lives in the sidebar; remove the old top hero spacing. */
+.oc-hero.fit404-logo-hero {
+    display: none !important;
+}
+
+.fit404-sidebar-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.4rem 1.35rem;
+    margin-bottom: 0.55rem;
+}
+
+.fit404-sidebar-logo {
+    display: block;
+    width: min(165px, 82%);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 26px rgba(0,0,0,.38));
+}
+
+/* Give the navigation more breathing room below the brand. */
+[data-testid="stSidebar"] [role="radiogroup"] {
+    margin-top: 0.15rem;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    min-height: 52px;
+    margin-bottom: 0.45rem !important;
+}
+
+/* Fill the canvas immediately instead of reserving a large empty hero area. */
+.block-container {
+    padding-top: 3.6rem !important;
+    padding-bottom: 4.5rem !important;
+}
+
+/* Oversized editorial headings: first word neon, remainder white. */
+.oc-section {
+    margin-top: 0.6rem !important;
+    margin-bottom: 1.75rem !important;
+}
+
+.oc-section-title {
+    margin: 0 !important;
+    font-size: clamp(3.15rem, 5.5vw, 5.9rem) !important;
+    line-height: 0.95 !important;
+    font-weight: 950 !important;
+    letter-spacing: -0.065em !important;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.oc-section-accent {
+    color: var(--accent);
+    text-shadow: 0 0 24px rgba(200,255,50,.10);
+}
+
+.oc-section-light {
+    color: var(--text);
+}
+
+.oc-section-underline {
+    width: clamp(92px, 10vw, 145px);
+    height: 4px;
+    margin-top: 1.05rem;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 18px rgba(200,255,50,.14);
+}
+
+/* More generous upload card proportions. */
+.upload-hero {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3.8rem 2.5rem 2.6rem !important;
+    border-color: rgba(200,255,50,.24) !important;
+}
+
+.upload-plus {
+    font-size: 3.35rem !important;
+    margin-bottom: 1.35rem !important;
+}
+
+.upload-title {
+    font-size: clamp(1.55rem, 2.2vw, 2rem) !important;
+    font-weight: 950 !important;
+    text-transform: uppercase;
+}
+
+.upload-subtitle {
+    margin-top: 0.75rem !important;
+    font-size: 1rem !important;
+}
+
+[data-testid="stFileUploader"] {
+    padding: 1.25rem 1.5rem 1.5rem !important;
+}
+
+/* The footer still feels open and balanced without competing with the sidebar brand. */
+.oc-footer {
+    margin-top: 4.5rem !important;
+}
+
+@media (max-width: 850px) {
+    .block-container {
+        padding-top: 2rem !important;
+    }
+
+    .fit404-sidebar-logo {
+        width: 135px;
+    }
+
+    .oc-section-title {
+        font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    }
+
+    .upload-hero {
+        min-height: 250px;
+        padding: 2.8rem 1.4rem 2rem !important;
+    }
+}
+
+/* =========================================
+   2026-08 CONTRAST + FIT BATTLE POLISH
+   ========================================= */
+
+/* Keep interface copy bright and readable on the dark canvas. */
+:root {
+    --text: #ffffff;
+    --muted: #b8bbb6;
+}
+
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] span,
+[data-testid="stSidebar"] [role="radiogroup"] label p {
+    color: #f6f7f2 !important;
+}
+
+/* Navigation text must not fade when hovered. */
+[data-testid="stSidebar"] [role="radiogroup"] label:hover p {
+    color: #ffffff !important;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) p,
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked):hover p {
+    color: #c8ff32 !important;
+}
+
+/* Streamlit file uploader button: readable at rest and on hover. */
+[data-testid="stFileUploader"] button,
+[data-testid="stFileUploader"] button:focus,
+[data-testid="stFileUploader"] button:active {
+    color: #ffffff !important;
+    background: #15171c !important;
+    border: 1px solid rgba(255,255,255,.20) !important;
+    box-shadow: none !important;
+}
+
+[data-testid="stFileUploader"] button:hover {
+    color: #ffffff !important;
+    background: #1b1f1c !important;
+    border-color: #c8ff32 !important;
+    box-shadow: 0 0 0 1px rgba(200,255,50,.08) !important;
+}
+
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] p {
+    color: #d9dbd6 !important;
+}
+
+/* Native inputs/selects should remain legible when focused or hovered. */
+[data-baseweb="select"] *,
+[data-testid="stTextInput"] input,
+[data-testid="stTextInput"] input:hover,
+[data-testid="stTextInput"] input:focus {
+    color: #f8f8f4 !important;
+}
+
+/* Fit Battle now uses complete cards, matching the visual finish of Wardrobe. */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.014)) !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 14px 38px rgba(0,0,0,.20) !important;
+    overflow: hidden;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] > div {
+    padding: 1.25rem 1.25rem 1.15rem !important;
+}
+
+.battle-look-label {
+    margin-bottom: .35rem !important;
+    font-size: .82rem !important;
+    color: #c8ff32 !important;
+}
+
+.battle-look-sub {
+    color: #c8cbc5;
+    font-size: .88rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Inside the battle cards the uploader becomes an intentional inner panel. */
+[data-testid="stVerticalBlockBorderWrapper"] [data-testid="stFileUploader"] {
+    min-height: 118px;
+    display: flex;
+    align-items: center;
+    background: rgba(17,18,20,.82) !important;
+    border: 1px solid rgba(255,255,255,.13) !important;
+    border-radius: 16px !important;
+    padding: 1rem 1.15rem !important;
+    transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] [data-testid="stFileUploader"]:hover {
+    background: rgba(20,22,20,.95) !important;
+    border-color: rgba(200,255,50,.42) !important;
+    box-shadow: inset 0 0 0 1px rgba(200,255,50,.05) !important;
+}
+
+@media (max-width: 800px) {
+    [data-testid="stVerticalBlockBorderWrapper"] > div {
+        padding: 1rem !important;
+    }
+}
+
+/* =========================================
+   2026-08 SINGLE-BOX ANALYZE UPLOAD + CARD POLISH
+   ========================================= */
+
+/* Analyze Fit: make the large green hero itself the upload target.
+   The native Streamlit uploader stays functional, but is invisibly
+   layered over the hero so there is no separate uploader strip. */
+.st-key-main_outfit_upload {
+    position: relative;
+    z-index: 5;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.st-key-main_outfit_upload [data-testid="stFileUploader"] {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: transparent !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+}
+
+.st-key-main_outfit_upload [data-testid="stFileUploader"] section,
+.st-key-main_outfit_upload [data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    cursor: pointer !important;
+}
+
+.st-key-main_outfit_upload [data-testid="stFileUploader"] button {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    cursor: pointer !important;
+}
+
+/* Make the visible hero communicate interactivity on its own. */
+.upload-hero {
+    border: 1px solid rgba(200,255,50,.36) !important;
+    border-radius: 24px !important;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(200,255,50,.045), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.013)) !important;
+    box-shadow: 0 16px 44px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.012);
+    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background .18s ease;
+    cursor: pointer;
+}
+
+.upload-hero:hover {
+    border-color: rgba(200,255,50,.72) !important;
+    box-shadow: 0 18px 52px rgba(0,0,0,.26), 0 0 0 1px rgba(200,255,50,.08), inset 0 0 36px rgba(200,255,50,.025);
+    transform: translateY(-1px);
+}
+
+.upload-plus {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 1px solid rgba(200,255,50,.32);
+    border-radius: 18px;
+    background: rgba(200,255,50,.045);
+    box-shadow: inset 0 0 24px rgba(200,255,50,.025);
+}
+
+/* Consistent finish for bordered Streamlit cards used across battle/wardrobe/forms. */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: rgba(255,255,255,.15) !important;
+    background:
+        radial-gradient(circle at 0 0, rgba(200,255,50,.025), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.044), rgba(255,255,255,.014)) !important;
+    box-shadow: 0 16px 42px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.012) !important;
+}
+
+/* File uploaders outside Analyze Fit remain clear, self-contained mini cards. */
+[data-testid="stFileUploader"]:not(.st-key-main_outfit_upload [data-testid="stFileUploader"]) {
+    border-radius: 16px !important;
+}
+
+@media (max-width: 850px) {
+    .st-key-main_outfit_upload [data-testid="stFileUploader"] {
+        height: 250px !important;
+        min-height: 250px !important;
+    }
+
+    .upload-plus {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+    }
+}
+
+/* =========================================
+   FIT BATTLE — ANALYZE-STYLE INNER UPLOAD BOXES
+   ========================================= */
+
+/* LOOK A / LOOK B remain the labels for the outer cards. */
+.battle-look-label {
+    margin: 0 0 .8rem !important;
+    font-size: .86rem !important;
+    letter-spacing: .12em !important;
+    color: #c8ff32 !important;
+}
+
+/* Inner battle drop target mirrors Analyze Fit's hero treatment. */
+.battle-upload-hero {
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .7rem;
+    padding: 1.4rem 1.25rem;
+    border: 1px dashed rgba(200,255,50,.62);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 44%, rgba(200,255,50,.055), transparent 40%),
+        linear-gradient(145deg, rgba(255,255,255,.028), rgba(255,255,255,.009));
+    box-shadow: inset 0 0 0 1px rgba(200,255,50,.018);
+    cursor: pointer;
+    transition: border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.battle-upload-hero:hover {
+    border-color: rgba(200,255,50,.92);
+    background:
+        radial-gradient(circle at 50% 44%, rgba(200,255,50,.075), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.012));
+    box-shadow: inset 0 0 34px rgba(200,255,50,.025), 0 0 0 1px rgba(200,255,50,.05);
+    transform: translateY(-1px);
+}
+
+.battle-upload-plus {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    color: #c8ff32;
+    font-size: 3.05rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.battle-upload-title {
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: .015em;
+    color: #f8f8f4;
+}
+
+.battle-upload-subtitle {
+    max-width: 290px;
+    color: #e7e9e3;
+    font-size: .93rem;
+    line-height: 1.5;
+}
+
+/* Keep the real Streamlit uploader fully functional while making the
+   visible inner card itself the click target. */
+.st-key-battle_a,
+.st-key-battle_b {
+    position: relative;
+    z-index: 6;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.st-key-battle_a [data-testid="stFileUploader"],
+.st-key-battle_b [data-testid="stFileUploader"] {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 245px !important;
+    min-height: 245px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 20px !important;
+    background: transparent !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+}
+
+.st-key-battle_a [data-testid="stFileUploader"] section,
+.st-key-battle_b [data-testid="stFileUploader"] section,
+.st-key-battle_a [data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"],
+.st-key-battle_b [data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    cursor: pointer !important;
+}
+
+.st-key-battle_a [data-testid="stFileUploader"] button,
+.st-key-battle_b [data-testid="stFileUploader"] button {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    border: 0 !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+}
+
+/* The outer battle cards should read as full, finished panels. */
+.st-key-battle_a,
+.st-key-battle_b {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .battle-upload-hero {
+        min-height: 215px;
+    }
+
+    .st-key-battle_a [data-testid="stFileUploader"],
+    .st-key-battle_b [data-testid="stFileUploader"] {
+        height: 215px !important;
+        min-height: 215px !important;
+    }
+}
+
+/* =========================================
+   SIDEBAR RECOVERY CONTROL
+   Keep Streamlit chrome visually hidden without hiding the sidebar toggle.
+   ========================================= */
+header[data-testid="stHeader"] {
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Hide the unwanted header contents, but preserve sidebar controls. */
+header[data-testid="stHeader"] > * {
+    pointer-events: none !important;
+}
+
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapseButton"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    top: 0.85rem !important;
+    left: 0.85rem !important;
+    z-index: 10001 !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stSidebarCollapseButton"] button,
+button[kind="header"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    color: #f5f5f5 !important;
+    background: rgba(12, 12, 12, 0.90) !important;
+    border: 1px solid rgba(200, 255, 50, 0.35) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 22px rgba(0,0,0,.35) !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] button:hover,
+[data-testid="stSidebarCollapseButton"] button:hover,
+button[kind="header"]:hover {
+    color: #c8ff32 !important;
+    border-color: #c8ff32 !important;
+    background: rgba(200, 255, 50, 0.08) !important;
+}
+
+/* =========================================
+   SIDEBAR TOGGLE — ROBUST STREAMLIT RECOVERY
+   Streamlit may place the collapsed-sidebar control inside the header/toolbar.
+   Keep those containers alive and transparent instead of display:none so the
+   control can always be clicked after the sidebar is collapsed.
+   ========================================= */
+header[data-testid="stHeader"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    height: 3.75rem !important;
+    min-height: 3.75rem !important;
+    overflow: visible !important;
+    background: transparent !important;
+    pointer-events: none !important;
+    z-index: 2147483000 !important;
+}
+
+/* Some Streamlit builds mount the collapsed control under stToolbar. */
+[data-testid="stToolbar"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4.5rem !important;
+    height: 3.75rem !important;
+    overflow: visible !important;
+    background: transparent !important;
+    pointer-events: none !important;
+    z-index: 2147483001 !important;
+}
+
+/* Hide ordinary toolbar/header chrome without killing its container. */
+[data-testid="stToolbar"] > :not([data-testid="stSidebarCollapsedControl"]):not([data-testid="stSidebarCollapseButton"]),
+header[data-testid="stHeader"] > :not([data-testid="stSidebarCollapsedControl"]):not([data-testid="stSidebarCollapseButton"]) {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Cover selectors used across recent Streamlit versions. */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="collapsedControl"],
+button[data-testid="stBaseButton-headerNoPadding"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    top: 0.80rem !important;
+    left: 0.80rem !important;
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+    min-width: 2.55rem !important;
+    min-height: 2.55rem !important;
+    z-index: 2147483640 !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="collapsedControl"] button,
+button[data-testid="stBaseButton-headerNoPadding"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+    padding: 0 !important;
+    color: #f7f7f7 !important;
+    background: rgba(10, 10, 10, 0.96) !important;
+    border: 1px solid rgba(200, 255, 50, 0.55) !important;
+    border-radius: 11px !important;
+    box-shadow: 0 7px 24px rgba(0,0,0,.45) !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] button:hover,
+[data-testid="stSidebarCollapseButton"] button:hover,
+[data-testid="collapsedControl"] button:hover,
+button[data-testid="stBaseButton-headerNoPadding"]:hover {
+    color: #c8ff32 !important;
+    border-color: #c8ff32 !important;
+    background: rgba(200,255,50,.10) !important;
+}
+
+/* Do not let the invisible header layer block the app. */
+header[data-testid="stHeader"] *,
+[data-testid="stToolbar"] * {
+    pointer-events: none;
+}
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapsedControl"] *,
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapseButton"] *,
+[data-testid="collapsedControl"],
+[data-testid="collapsedControl"] *,
+button[data-testid="stBaseButton-headerNoPadding"] {
+    pointer-events: auto !important;
+}
+
+/* =========================================================
+   FIT404 sidebar navigation icons
+   Replaces Streamlit's radio indicators with compact neon
+   line icons while preserving the entire row as the control.
+   ========================================================= */
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.78rem !important;
+    padding-left: 0.95rem !important;
+}
+
+/* Remove every native/baseweb radio marker. */
+[data-testid="stSidebar"] [role="radiogroup"] label > div:first-child,
+[data-testid="stSidebar"] [role="radiogroup"] input[type="radio"],
+[data-testid="stSidebar"] [role="radiogroup"] input[type="radio"] + div {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Shared icon shell. */
+[data-testid="stSidebar"] [role="radiogroup"] label::before {
+    content: "";
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-color: #b9ff22;
+    opacity: 0.92;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: transform .18s ease, opacity .18s ease, filter .18s ease;
+}
+
+/* Analyze Fit — target / scan icon. */
+[data-testid="stSidebar"] [role="radiogroup"] label:nth-child(1)::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1.3' fill='black' stroke='none'/%3E%3Cpath d='M12 2v4M12 18v4M2 12h4M18 12h4'/%3E%3Cpath d='M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1.3' fill='black' stroke='none'/%3E%3Cpath d='M12 2v4M12 18v4M2 12h4M18 12h4'/%3E%3Cpath d='M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2'/%3E%3C/svg%3E");
+}
+
+/* Fit Battle — crossed blades. */
+[data-testid="stSidebar"] [role="radiogroup"] label:nth-child(2)::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3l7 7-2 2-7-7 2-2zM20 3l-7 7 2 2 7-7-2-2z'/%3E%3Cpath d='M8.5 11.5l-5 5M15.5 11.5l5 5M2.5 17.5l4 4M21.5 17.5l-4 4M7 20l2-2M17 20l-2-2'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3l7 7-2 2-7-7 2-2zM20 3l-7 7 2 2 7-7-2-2z'/%3E%3Cpath d='M8.5 11.5l-5 5M15.5 11.5l5 5M2.5 17.5l4 4M21.5 17.5l-4 4M7 20l2-2M17 20l-2-2'/%3E%3C/svg%3E");
+}
+
+/* Wardrobe — hanger. */
+[data-testid="stSidebar"] [role="radiogroup"] label:nth-child(3)::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 6.3a2 2 0 1 1 2.5 1.95V10'/%3E%3Cpath d='M12.5 10L3 16.5c-.9.6-.5 2 0.6 2h16.8c1.1 0 1.5-1.4.6-2L12.5 10z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 6.3a2 2 0 1 1 2.5 1.95V10'/%3E%3Cpath d='M12.5 10L3 16.5c-.9.6-.5 2 0.6 2h16.8c1.1 0 1.5-1.4.6-2L12.5 10z'/%3E%3C/svg%3E");
+}
+
+/* Build Fit — T-shirt. */
+[data-testid="stSidebar"] [role="radiogroup"] label:nth-child(4)::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.4 4.2L5.2 5.4 2.8 9l3 2 1.4-1.7V20h9.6V9.3l1.4 1.7 3-2-2.4-3.6-3.2-1.2C14.9 5.6 13.6 6.4 12 6.4s-2.9-.8-3.6-2.2z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.4 4.2L5.2 5.4 2.8 9l3 2 1.4-1.7V20h9.6V9.3l1.4 1.7 3-2-2.4-3.6-3.2-1.2C14.9 5.6 13.6 6.4 12 6.4s-2.9-.8-3.6-2.2z'/%3E%3C/svg%3E");
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] label:hover::before,
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked)::before {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 5px rgba(185,255,34,.35));
+}
+
+/* Ensure the label text starts immediately after the icon. */
+[data-testid="stSidebar"] [role="radiogroup"] label [data-testid="stMarkdownContainer"],
+[data-testid="stSidebar"] [role="radiogroup"] label p {
+    margin: 0 !important;
+}
