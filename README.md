@@ -123,8 +123,10 @@ FIT404/
 │   ├── fit404_footer_logo.png
 │   └── fit404_logo.png
 ├── data/
-│
+│   ├── wardrobe.json 
 ├── requirements.txt
+├── .streamlit
+│   ├── wardrobe.json 
 ├── .gitignore
 └── README.md
 ```
