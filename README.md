@@ -315,4 +315,3 @@ The goal is to make outfit analysis and wardrobe recommendations **useful, expla
 ## 👨‍💻 Author
 
 **Aditya Kundliya**  
-B.Tech Computer Science Engineering — Artificial Intelligence & Machine Learning
